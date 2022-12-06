@@ -4,8 +4,8 @@
 
 pkgname=bilibili-linux
 _pkgname=bilibili
-pkgver=1.6.1
-pkgrel=3
+pkgver=1.7.2
+pkgrel=1
 pkgdesc='Bilibili unofficial desktop client'
 license=('custom')
 depends=('ffmpeg' 'electron19' 'libappindicator-gtk3')
@@ -15,7 +15,7 @@ source=("https://github.com/msojocs/bilibili-linux/releases/download/v${pkgver}-
         "${_pkgname}"
         "${_pkgname}.svg"
         "${_pkgname}.desktop")
-sha256sums=('7617189b6433129e021b93ee29e6d3a9d1c6b382b92891a0b0738b2dfe52cc34'
+sha256sums=('47addbfa12d9ad385d0ffc8a039d0fad9a817bf2f41726fd0b214db104e9a054'
             '313b8ffcbc8a63ce6d53a427edc044bcff36464ba6cadbb29173266145bd20b5'
             '3a7935d2d13d62fad68b4ee5aaa4832e6a202b379f2be2f80d3723f8f3993192'
             'e7e40fd93448b1c0b953deaa0829625b30e8f36f61140fa2a5e09012bc459fcb')

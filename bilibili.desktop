@@ -3,7 +3,7 @@ Categories=AudioVideo;Video;Network;
 Comment=Bilibili desktop client
 Comment[zh_CN]=哔哩哔哩桌面版
 Comment[zh_TW]=嗶哩嗶哩桌面版
-Exec=bilibili %u
+Exec=env ELECTRON_FORCE_IS_PACKAGED=true electron19 /usr/share/bilibili/bilibili.asar %u
 Icon=bilibili
 StartupWMClass=bilibili
 MimeType=

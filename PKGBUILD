@@ -12,19 +12,16 @@ depends=('ffmpeg' 'electron19' 'libappindicator-gtk3')
 arch=('any')
 url='https://github.com/msojocs/bilibili-linux'
 source=("https://github.com/msojocs/bilibili-linux/releases/download/v${pkgver}-${pkgrel}/bilibili-v${pkgver}-${pkgrel}-x86_64.tar.gz"
-        "${_pkgname}"
         "${_pkgname}.svg"
         "${_pkgname}.desktop")
 sha256sums=('47addbfa12d9ad385d0ffc8a039d0fad9a817bf2f41726fd0b214db104e9a054'
-            '313b8ffcbc8a63ce6d53a427edc044bcff36464ba6cadbb29173266145bd20b5'
             '3a7935d2d13d62fad68b4ee5aaa4832e6a202b379f2be2f80d3723f8f3993192'
-            'e7e40fd93448b1c0b953deaa0829625b30e8f36f61140fa2a5e09012bc459fcb')
+            '193f8edb09f5fb4706a646bf80f975cbcf6cfaf59ac959be9875d8e77d4b5e45')
 
 package() {
     install -Dm644 "${_pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
     install -Dm644 "${_pkgname}.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/${_pkgname}.svg"
     install -Dm644 "${srcdir}/app/app.asar" "${pkgdir}/usr/share/${_pkgname}/${_pkgname}.asar"
     install -Dm644 "${srcdir}/app/app-update.yml" "${pkgdir}/usr/share/${_pkgname}/app-update.yml"
-    install -Dm755 "${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
     cp -r "${srcdir}/app/extensions" "${pkgdir}/usr/share/${_pkgname}/extensions"
 }

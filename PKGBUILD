@@ -16,12 +16,12 @@ source=("https://github.com/msojocs/bilibili-linux/releases/download/v${pkgver}-
         "${_pkgname}.desktop")
 sha256sums=('47addbfa12d9ad385d0ffc8a039d0fad9a817bf2f41726fd0b214db104e9a054'
             '3a7935d2d13d62fad68b4ee5aaa4832e6a202b379f2be2f80d3723f8f3993192'
-            '193f8edb09f5fb4706a646bf80f975cbcf6cfaf59ac959be9875d8e77d4b5e45')
+            'bc6d8f56b3d928f40800556def5101e8f6e54796b636747bc1111d1b09ee082f')
 
 package() {
     install -Dm644 "${_pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
     install -Dm644 "${_pkgname}.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/${_pkgname}.svg"
-    install -Dm644 "${srcdir}/app/app.asar" "${pkgdir}/usr/share/${_pkgname}/${_pkgname}.asar"
-    install -Dm644 "${srcdir}/app/app-update.yml" "${pkgdir}/usr/share/${_pkgname}/app-update.yml"
-    cp -r "${srcdir}/app/extensions" "${pkgdir}/usr/share/${_pkgname}/extensions"
+    install -Dm644 -t "${pkgdir}/usr/lib/${_pkgname}" "${srcdir}/app/app.asar"
+    install -Dm644 -t "${pkgdir}/usr/lib/${_pkgname}" "${srcdir}/app/app-update.yml"
+    cp -r "${srcdir}/app/extensions" "${pkgdir}/usr/lib/${_pkgname}/extensions"
 }
